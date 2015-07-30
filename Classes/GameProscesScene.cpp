@@ -32,25 +32,15 @@ bool GameProscesScene::init() {
     cocos2d::Size visibleSize = cocos2d::Director::getInstance()->getVisibleSize();
     cocos2d::Vec2 origin = cocos2d::Director::getInstance()->getVisibleOrigin();
 
-//    hud = HUD::createLayer("The Enemy is approaching!", visibleSize);
+    hud = HUD::create();
+    hud->initOptions("message");
     //
-    // ------------------------------HUD_DEFENITION_START------------------------------------------------------
-    cocos2d::Layer* hud = cocos2d::LayerColor::create(cocos2d::Color4B(214, 17, 17, 1));
-    hud->setPosition(cocos2d::Vec2::ZERO);
-    hud->setContentSize( visibleSize );
+    this->addChild( hud, 2 );
+    /*/ ------------------------------HUD_DEFENITION_START------------------------------------------------------
 
-    auto _messageLabel = cocos2d::Label::createWithSystemFont("HUD","Arial",19);
-    _messageLabel->setColor(cocos2d::Color3B(255, 215, 0));
-    _messageLabel->setPosition(cocos2d::Vec2(cocos2d::Director::getInstance()->getVisibleSize().width/2,
-                                             cocos2d::Director::getInstance()->getVisibleSize().height/2));
-    this->addChild(_messageLabel,3);
 
-    auto backboard = cocos2d::Sprite::create("hood.png");
-
-    this->addChild( backboard, 3 );
 
 //------------------------------HUD_DEFENITION_END---------------------------------------------------------*/
-    this->addChild( hud, 2 );
     this->schedule( schedule_selector(GameProscesScene::Update) );
 
     return true;

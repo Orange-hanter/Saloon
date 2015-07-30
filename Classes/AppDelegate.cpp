@@ -1,4 +1,5 @@
 #include "AppDelegate.h"
+
 #include "StartMenuScene.h"
 
 USING_NS_CC;
@@ -34,13 +35,15 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("My Game");
+        glview = GLViewImpl::createWithFullScreen("My Game");
+        glview->setFrameSize(1366,720);
         director->setOpenGLView(glview);
     }
 
+    glview->setDesignResolutionSize(1366, 720, ResolutionPolicy::SHOW_ALL);
+
     // turn on display FPS
     director->setDisplayStats(true);
-
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
@@ -48,6 +51,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
 
     // create a scene. it's an autorelease object
+
     auto scene = StartMenuScene::createScene();
 
     // run

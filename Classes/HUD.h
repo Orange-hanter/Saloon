@@ -10,14 +10,11 @@
 using namespace cocos2d;
 
 
-class HUD: public cocos2d::LayerColor {
+class HUD: public cocos2d::Layer {
 
 public:
-
-    static HUD* createLayer(const std::string& _message, cocos2d::Size size);
-
-    void initOptions(const std::string& _message);
-
+    void initOptions(const std::string &_message);
+    CREATE_FUNC(HUD);
 };
 
 
