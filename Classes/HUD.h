@@ -18,4 +18,4 @@ public:
 };
 
 
-#endif //MYGAME_HUD_H~
+#endif //MYGAME_HUD_H
