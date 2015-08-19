@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 #include "GameProscesScene.h"
 
+#define FONT_SIZE 24
 
 class StartMenuScene :  public cocos2d::Layer
 {

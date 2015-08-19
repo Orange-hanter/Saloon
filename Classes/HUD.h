@@ -13,9 +13,9 @@ using namespace cocos2d;
 class HUD: public cocos2d::Layer {
 
 public:
-    void initOptions(const std::string &_message);
+    void initOptions();
     CREATE_FUNC(HUD);
 };
 
 
-#endif //MYGAME_HUD_H
+#endif //MYGAME_HUD_H~

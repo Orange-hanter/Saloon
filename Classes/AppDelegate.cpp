@@ -31,16 +31,18 @@ static int register_all_packages()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
+
     // initialize director
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
+
     if(!glview) {
-        glview = GLViewImpl::createWithFullScreen("My Game");
+        glview = GLViewImpl::create("My Game");
         glview->setFrameSize(1366,720);
         director->setOpenGLView(glview);
     }
 
-    glview->setDesignResolutionSize(1366, 720, ResolutionPolicy::SHOW_ALL);
+    glview->setDesignResolutionSize(1366, 720, ResolutionPolicy::NO_BORDER);
 
     // turn on display FPS
     director->setDisplayStats(true);
